@@ -3,16 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-"scripts": {
-  "dev:vite": "vite",
-  "dev:css": "pnpm dlx @tailwindcss/cli -i ./src/css/style-input.css -o ./src/css/style-output.css --watch",
-  "dev": "concurrently \"pnpm dev:css\" \"pnpm dev:vite\"",
-  "build:css-prod": "pnpm dlx @tailwindcss/cli -i ./src/css/style-input.css -o ./src/css/style-output.css --minify",
-  "build": "pnpm build:css-prod && vite build",
-  "lint": "eslint .",
-  "preview": "vite preview"
-},
+  "scripts": {
+    "dev:vite": "vite",
+    "dev:css": "pnpm dlx @tailwindcss/cli -i ./src/css/style-input.css -o ./src/css/style-output.css --watch",
+    "dev": "concurrently \"pnpm dev:css\" \"pnpm dev:vite\"",
+    "build:css-prod": "pnpm dlx @tailwindcss/cli -i ./src/css/style-input.css -o ./src/css/style-output.css --minify",
+    "build": "pnpm build:css-prod && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
+    "framer-motion": "^12.42.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
