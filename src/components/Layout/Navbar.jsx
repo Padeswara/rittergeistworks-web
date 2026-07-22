@@ -1,116 +1,32 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import dragonHelmet from "../../assets/images/dragon-helmet.png";
+import React from 'react'
+import dragonIcon from '../../assets/images/dragon-helmet.png'
+import { Search } from "lucide-react";
 
 function Navbar() {
-    const [scrolled, setScrolled] = useState(false);
+  return (
+    <>
+<div className="fixed top-5 left-0 z-50 px-5 w-full md:hidden">
+  <div className="flex items-center gap-3 rounded-full border border-white/10 bg-black/30 px-4 py-5 backdrop-blur-xl">
+    <Search size={18} className="text-zinc-400" />
+    <input
+      type="text"
+      placeholder="Search..."
+      className="flex-1 bg-transparent text-white outline-none placeholder:text-zinc-500"
+    />
+  </div>
+</div>
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 30);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    const navItems = [
-        "About",
-        "Experience",
-        "Project",
-        "Contact",
-    ];
-
-    return (
-        <motion.nav initial={{ y: 0, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, ease: "easeOut" }} className="fixed top-0 left-0 z-50 flex w-full justify-center w-full items-center py-5">
-            <div className={`flex items-center rounded-full border border-white/10 backdrop-blur-xl shadow-md transition-all duration-300
-                ${ scrolled ? "bg-white/10 h-14 px-6": "bg-white/10 h-20 px-10"}`}>
-                <div className="flex items-center gap-8 text-white font-lexend">
-                    {navItems.slice(0, 2).map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
-                            className="
-                                relative
-                                text-sm
-                                uppercase
-                                tracking-wider
-                                transition
-                                duration-300
-                                hover:text-[#e5291b]
-
-                                after:absolute
-                                after:left-1/2
-                                after:-bottom-1
-                                after:h-[2px]
-                                after:w-0
-                                after:-translate-x-1/2
-                                after:bg-[#e5291b]
-                                after:transition-all
-                                after:duration-300
-                                hover:after:w-full
-                            "
-                        >
-                            {item}
-                        </a>
-                    ))}
-
-                    <motion.a
-                        href="#home"
-                        whileHover={{
-                            scale: 1.15,
-                            rotate: -12,
-                        }}
-                        whileTap={{
-                            scale: 0.95,
-                        }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 300,
-                        }}
-                    >
-                        <img
-                            src={dragonHelmet}
-                            alt="Dragon Helmet"
-                            className="h-12 w-auto"
-                        />
-                    </motion.a>
-
-                    {navItems.slice(2).map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
-                            className="
-                                relative
-                                text-sm
-                                uppercase
-                                tracking-wider
-                                transition
-                                duration-300
-                                hover:text-[#e5291b]
-
-                                after:absolute
-                                after:left-1/2
-                                after:-bottom-1
-                                after:h-[2px]
-                                after:w-0
-                                after:-translate-x-1/2
-                                after:bg-[#e5291b]
-                                after:transition-all
-                                after:duration-300
-                                hover:after:w-full
-                            "
-                        >
-                            {item}
-                        </a>
-                    ))}
-                </div>
-            </div>
-        </motion.nav>
-    );
+    <nav className='w-full h-auto fixed bottom-0 flex justify-center items-center md:top-0 md:h-32'>
+        <div className='w-full h-20 flex justify-center items-center gap-6 bg-black/30 backdrop-blur-xl shadow-xl md:rounded-full border border-white/5 px-10 py-3 md:w-auto rounded-0'>
+                <a className='navLink' href="">About</a>
+                <a className='navLink' href="">Experience</a>
+                <img className='h-full hover:scale-110 hover:-rotate-6 duration-300 transition-transform cursor-pointer' src={dragonIcon} alt="" />
+                <a className='navLink' href="">Project</a>
+                <a className='navLink' href="">Contact</a>
+        </div>
+    </nav>
+    </>
+)
 }
 
-export default Navbar;
+export default Navbar

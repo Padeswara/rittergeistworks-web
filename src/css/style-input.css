@@ -2,35 +2,16 @@
 @import "tailwindcss";
 
 @theme {
-    --font-inter: 'Inter', sans-serif;
-    --font-lexend: 'Lexend', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-lexend: 'Lexend', sans-serif;
 }
 
-html, body, #root {
-    @apply w-full h-screen
+html,
+body,
+#root {
+  @apply w-full h-screen
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.navbarMenu {
-    @apply relative
-    after:absolute
-    after:left-0
-    after:-bottom-1
-    after:h-[2px]
-    after:w-0
-    after:bg-yellow-400
-    after:transition-all
-    after:duration-300
-    hover:after:w-full
+.navLink {
+  @apply relative font-bold font-lexend text-white text-xl hover:text-[#ec4632] after:bg-[#ec4632] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-0 after:transition-all after:duration-300 hover:after:w-full
 }
