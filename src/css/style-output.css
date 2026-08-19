@@ -17,6 +17,8 @@
     --spacing: 0.25rem;
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
@@ -191,17 +193,8 @@
   .relative {
     position: relative;
   }
-  .top-5 {
-    top: calc(var(--spacing) * 5);
-  }
-  .bottom-0 {
-    bottom: 0px;
-  }
-  .left-0 {
-    left: 0px;
-  }
-  .z-50 {
-    z-index: 50;
+  .top-0 {
+    top: 0px;
   }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
@@ -230,9 +223,6 @@
   .max-w-225 {
     max-width: calc(var(--spacing) * 225);
   }
-  .flex-1 {
-    flex: 1;
-  }
   .cursor-pointer {
     cursor: pointer;
   }
@@ -248,14 +238,8 @@
   .justify-center {
     justify-content: center;
   }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
-  }
-  .rounded-full {
-    border-radius: calc(infinity * 1px);
   }
   .border {
     border-style: var(--tw-border-style);
@@ -267,20 +251,11 @@
       border-color: color-mix(in oklab, var(--color-white) 5%, transparent);
     }
   }
-  .border-white\/10 {
-    border-color: color-mix(in srgb, #fff 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-white) 10%, transparent);
-    }
-  }
   .bg-black\/30 {
     background-color: color-mix(in srgb, #000 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-black) 30%, transparent);
     }
-  }
-  .bg-transparent {
-    background-color: transparent;
   }
   .bg-white {
     background-color: var(--color-white);
@@ -288,23 +263,11 @@
   .bg-zinc-900 {
     background-color: var(--color-zinc-900);
   }
-  .px-4 {
-    padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-5 {
-    padding-inline: calc(var(--spacing) * 5);
-  }
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
-  }
-  .py-5 {
-    padding-block: calc(var(--spacing) * 5);
-  }
-  .pb-32 {
-    padding-bottom: calc(var(--spacing) * 32);
   }
   .text-left {
     text-align: left;
@@ -327,9 +290,6 @@
   .text-white {
     color: var(--color-white);
   }
-  .text-zinc-400 {
-    color: var(--color-zinc-400);
-  }
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -348,13 +308,6 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
-  .outline-none {
-    --tw-outline-style: none;
-    outline-style: none;
-  }
-  .placeholder\:text-zinc-500::placeholder {
-    color: var(--color-zinc-500);
-  }
   @media (hover: hover) {
     .hover\:scale-110:hover {
       --tw-scale-x: 110%;
@@ -367,12 +320,6 @@
     }
   }
   @media (width >= 48rem) {
-    .md\:top-0 {
-      top: 0px;
-    }
-    .md\:hidden {
-      display: none;
-    }
     .md\:h-32 {
       height: calc(var(--spacing) * 32);
     }
@@ -381,9 +328,6 @@
     }
     .md\:rounded-full {
       border-radius: calc(infinity * 1px);
-    }
-    .md\:pt-32 {
-      padding-top: calc(var(--spacing) * 32);
     }
     .md\:text-3xl {
       font-size: var(--text-3xl);
@@ -411,61 +355,7 @@ html, body, #root {
   width: 100%;
 }
 .navLink {
-  position: relative;
-  font-family: var(--font-lexend);
-  font-size: var(--text-base);
-  line-height: var(--tw-leading, var(--text-base--line-height));
-  --tw-font-weight: var(--font-weight-bold);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  &::after {
-    content: var(--tw-content);
-    position: absolute;
-  }
-  &::after {
-    content: var(--tw-content);
-    bottom: calc(var(--spacing) * -1);
-  }
-  &::after {
-    content: var(--tw-content);
-    left: 0px;
-  }
-  &::after {
-    content: var(--tw-content);
-    height: calc(var(--spacing) * 0.5);
-  }
-  &::after {
-    content: var(--tw-content);
-    width: 0px;
-  }
-  &::after {
-    content: var(--tw-content);
-    background-color: #ec4632;
-  }
-  &::after {
-    content: var(--tw-content);
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  &::after {
-    content: var(--tw-content);
-    --tw-duration: 300ms;
-    transition-duration: 300ms;
-  }
-  &:hover {
-    @media (hover: hover) {
-      color: #ec4632;
-    }
-  }
-  &:hover {
-    @media (hover: hover) {
-      &::after {
-        content: var(--tw-content);
-        width: 100%;
-      }
-    }
-  }
+  <<<<<<< HEAD @apply relative font-bold font-lexend text-white text-base hover: text-[#ec4632] after:bg-[#ec4632] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full ======= @apply relative font-bold font-lexend text-white text-lg hover:text-[#ec4632] after:bg-[#ec4632] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-0 after:transition-all after:duration-300 hover:after:w-full >>>>>>> bd1ce05449036785c3b27359827e14ae4cd05833;
 }
 @property --tw-border-style {
   syntax: "*";
@@ -596,11 +486,6 @@ html, body, #root {
   inherits: false;
   initial-value: 1;
 }
-@property --tw-content {
-  syntax: "*";
-  initial-value: "";
-  inherits: false;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -633,7 +518,6 @@ html, body, #root {
       --tw-scale-x: 1;
       --tw-scale-y: 1;
       --tw-scale-z: 1;
-      --tw-content: "";
     }
   }
 }

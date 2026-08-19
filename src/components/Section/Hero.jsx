@@ -4,7 +4,7 @@ import userProfile from '../../assets/images/user.png'
 function Hero() {
   return (
     <div className='w-full h-screen bg-zinc-900'>
-      <div className='w-full h-full px-10 pb-32 md:pt-32 flex flex-col lg:flex-row justify-center items-center'>
+      <div className='w-full h-full flex flex-col lg:flex-row justify-center items-center'>
         <img className='w-full max-w-96' src={userProfile} alt="" />
         <div className='w-full max-w-225 relative flex flex-col justify-center items-start text-left'>
           <h1 className='text-5xl md:text-6xl xl:text-8xl font-lexend font-bold text-white'>Welcome to {" "} Rittergeistworks.</h1>
